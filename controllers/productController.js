@@ -1,16 +1,16 @@
 const getCatalogue = (request, response) => {
   const catalogServices = require("../services/productServices");
   catalogServices.searchService(function (err, rows) {
-    console.log("I am here");
+    //change to catalog to render catalog
     response.render("catalog", { products: rows });
   });
 };
 
 const getProductByID = (request, response) => {
   const catalogServices = require("../services/productServices");
-  let reference = request.params.reference;
+  let reference = request.params.id;
   catalogServices.searchIDService(reference, function (err, rows) {
-  response.render("articles", { product: rows });
+    response.render("article", { product: rows });
   });
 };
 
@@ -28,3 +28,4 @@ module.exports = {
   getProductByID,
   getProductsByCategory
 };
+
