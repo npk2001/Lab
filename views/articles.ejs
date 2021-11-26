@@ -1,53 +1,49 @@
-<%- include('header'); -%>
+    <%- include('header'); -%>
     <div class="content">
         <h1>Selected articles</h1>
         <table id="catalog">
             <thead>
                 <tr>
+                    
                     <th>Reference</th>
-                    <th scope="col">category</th>
-                    <th scope="col">name</th>
-                    <th scope="col">critical_stock</th>
-                    <th scope="col">price</th>
-                    <th scope="col">reference</th>
-                    <th scope="col">stock</th>
-                    <th scope="col">supplier</th>
-                    <th scope="col">vat</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Supplier</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Vat</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Critical_stock</th>
                 </tr>
             </thead>
             <tbody>
+              
                     <tr>
                         <th scope="row">
-
-                            <td>
-                                <a href="/api/article/<%= product.reference %>">
-                                    <%= product.reference %>
-                                </a>
-                            </td>
-                            <%= product.category %>
+                            <%= product.reference %>
                         </th>
+                        <td>                           
+                           <%= product.category %>                         
+                        </td>
                         <td>
                             <%= product.name %>
                         </td>
                         <td>
-                            <%= product.critical_stock %>
+                          <%= product.supplier %>
                         </td>
                         <td>
-                            <%= product.price %>AED
+                          <%= product.price %>AED
+                      </td>
+                        <td>
+                            <%= product.vat %>
                         </td>
                         <td>
-                          <%= product.reference %>AED
+                          <%= product.stock %>
                         </td>
                         <td>
-                        <%= product.stock %>AED
-                        </td>
-                        <td>
-                        <%= product.supplier %>AED
-                        </td>
-                        <td>
-                        <%= product.vat %>AED
+                          <%= product.critical_stock %>
                         </td>
                     </tr>
+                   
             </tbody>
         </table>
     </div>
